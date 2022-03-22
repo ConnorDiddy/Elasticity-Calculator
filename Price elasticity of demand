@@ -1,0 +1,72 @@
+print ("Price Elasticity of Demand Calculator")
+x = input("Regular Elasticity? [y/n]: ")
+if x.lower() == "y":
+  Q1 = input("Q1: ")
+  P1 = input("P1: ")
+  Q2 = input("Q2: ")
+  P2 = input("P2: ")
+
+  Q1 = float(Q1)
+  Q2 = float(Q2)
+  P1 = float(P1)
+  P2 = float(P2)
+
+  Q_Average = (Q1 + Q2) / 2
+  P_Average = (P1 + P2) / 2
+  Q_Change = (Q2 - Q1)
+  P_Change = (P2 - P1)
+  Q_Change_percent = (Q_Change / Q_Average) * 100
+  P_Change_percent = (P_Change / P_Average) * 100
+  P1_revenue = Q1 * P1
+  P2_revenue = Q2 * P2
+
+  numerator = Q_Change / Q_Average
+  denominator = P_Change / P_Average
+
+  midpoint_elasticity = abs(numerator/denominator)
+  elasticity = "Unknown"
+  if midpoint_elasticity > 1:
+    elasticity = "Elastic"
+  if midpoint_elasticity < 1:
+    elasticity = "Inelastic"
+    if midpoint_elasticity == 1:
+      elasticity = "Unitary"
+  midpoint_elasticity = round(midpoint_elasticity, 5)
+  print ("Midpoint Elasticity: " + str(midpoint_elasticity) + " (" + elasticity + ")")
+  print ("Average Quantity: " + str(Q_Average))
+  print ("Average Price: " + str(P_Average))
+  print ("Change in Quantity: " + str(Q_Change) +  " or: " + str(Q_Change_percent) + "%")
+  print ("Change in Price: " + str(P_Change) +  " or: " + str(P_Change_percent) + "%")
+  print ("Revenue at Price 1: " + str(P1_revenue))
+  print ("Revenue at Price 2: " + str(P2_revenue))
+if x.lower() == "n":
+  y = input("Income Elasticity? Y or N: ")
+  if y.lower() == "y":
+    Q_Change_percent = input("Percent Change in Quantity Demanded: ")
+    inc_change = input("Percent Change in Income: ")
+    Q_Change_percent = int(Q_Change_percent)
+    inc_change = int(inc_change)
+    inc_elasticity = Q_Change_percent / inc_change
+    print ("Income Elasticity of Demand = " + str(inc_elasticity) + "%")
+    if inc_elasticity > 0:
+      print ("Normal Good")
+    if inc_elasticity < 0:
+      print ("Inferior Good")
+  if y.lower() == "n":
+    z = input("Cross-Price Elasticity? Y or N: ")
+    if z.lower() == "y":
+      good1change = input("Percent change in Quantity Demanded for good 1: ")
+      good2change = input("Percent change in Price of good 2: ")
+      good1change = int(good1change)
+      good2change = int(good2change)
+      cross_price_elasticity = good1change / good2change
+      print (cross_price_elasticity)
+      if cross_price_elasticity > 0:
+        print ("Goods are Substitutes")
+      if cross_price_elasticity < 0:
+        print ("Goods are complements")
+
+
+
+
+
