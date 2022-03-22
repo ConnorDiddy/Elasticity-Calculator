@@ -1,10 +1,10 @@
 print ("Price Elasticity of Demand Calculator")
 x = input("Regular Elasticity? [y/n]: ")
 if x.lower() == "y":
-  Q1 = input("Q1: ")
-  P1 = input("P1: ")
-  Q2 = input("Q2: ")
-  P2 = input("P2: ")
+  Q1 = input("Quantity 1: ")
+  P1 = input("Price1: ")
+  Q2 = input("Quantity 2: ")
+  P2 = input("Price 2: ")
 
   Q1 = float(Q1)
   Q2 = float(Q2)
